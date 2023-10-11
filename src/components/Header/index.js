@@ -1,72 +1,67 @@
-'use client'
-
-import styles from './Header.module.css'
-import Image from 'next/image'
-import SVGIMG from '../../../public/menu.svg'
+import styles from "./Header.module.scss";
+import LOGOIMG from "../../../public/logo.png";
+import BUYSVG from "../../../public/buy_icon.svg";
+import Image from "next/image";
 
 const dataHeader = {
-    "nav": [
-        {
-            "id": "linkFirst",
-            "name": "Kalendarz promocji",
-            "slug": "/Calendar",
-
-        },
-        {
-            "id": "linkSecond",
-            "name": "Konfigurator bukmachera",
-            "slug": "/Configure"
-
-        },
-        {
-            "id": "linkThird",
-            "name": "Poradniki",
-            "slug": "/Tutorials"
-
-        },
-        {
-            "id": "linkFourth",
-            "name": "Typy",
-            "slug": "/Types"
-
-        }
-    ]
-}
+  nav: [
+    {
+      id: "linkFirst",
+      name: "Promocje",
+      slug: "/promocje",
+    },
+    {
+      id: "linkSecond",
+      name: "Kody promocyjne",
+      slug: "/kody-promocyjne",
+    },
+    {
+      id: "linkThird",
+      name: "Zakłady bez ryzyka",
+      slug: "/zaklady-bez-ryzyka",
+    },
+    {
+      id: "linkFourth",
+      name: "Freebety",
+      slug: "/freebety",
+    },
+    {
+      id: "linkFifth",
+      name: "Obstawianie zakładów",
+      slug: "/obstawianie-zakladow",
+    },
+  ],
+};
 
 export default function Header() {
-    return (
-        <>
-            <header className={styles.header}>
-                <div className={[styles.wrapper_row, styles.wrapper_header].join(" ")}>
+  return (
+    <>
+      <div className={styles.header}>
+        <div className={styles.container}>
+          <Image src={LOGOIMG} alt="logo bonuspedia" className={styles.logo} />
 
-                    <div className={styles.header_logo}>bonuspedia</div>
-
-                    <div className={styles.header_nav_mobile}>
-                        <Image
-                            src={SVGIMG}
-                            alt="lista do rozwiniecia z opcjami"
-                        />
-                    </div>
-                    <ul className={styles.header_nav}>
-                        {
-                            dataHeader.nav.map((nav, index) => {
-                                return (
-                                    <li className={styles.header_nav_option} key={`${nav.id} + ${index}`}>
-                                        <a href={nav.slug}>
-                                            {nav.name}
-                                        </a>
-                                    </li>
-                                );
-                            })
-                        }
-
-                    </ul>
-
-                    <button className={styles.header_register_button} onClick={() => {
-                        alert("to bedzie rejestracja")
-                    }}>Zarejestruj się</button>
-                </div>
-            </header>
-        </>
-    )
+          <div className={styles.nav}>
+            <ul className={styles.nav_list}>
+              {dataHeader.nav.map((nav, index) => {
+                return (
+                  <li key={`${nav.id} + ${index}`}>
+                    <a href={nav.slug}>{nav.name}</a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <div className={styles.buy_button}>
+            <button>
+              <Image
+                src={BUYSVG}
+                alt="obrazek koszyku na zakupy"
+                className={styles.buy_icon}
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }

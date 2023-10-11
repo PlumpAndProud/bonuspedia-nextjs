@@ -56,7 +56,7 @@ export default function PromotionCode() {
         <div className={style.codes}>
           {dataCode.code.map((code, index) => {
             return (
-              <div className={style.code} key="index">
+              <div className={style.code} key={index}>
                 <div className={style.wrapper}>
                   <h2 className={style.name}>{code.name}</h2>
                   <span className={style.text}>{code.text}</span>

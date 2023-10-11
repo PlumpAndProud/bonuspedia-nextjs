@@ -1,0 +1,64 @@
+.footer {
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    background-color: #353535;
+    max-width: 1140px;
+    height: 76px;
+    margin: auto;
+    margin-top: 20px;
+
+    border-radius: 15px;
+    .logo {
+      padding: 0 40px 0 20px;
+    }
+
+    .nav {
+      ul {
+        color: #d9d9d9;
+
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 14px;
+        opacity: 0.6;
+      }
+    }
+
+    .icons {
+      display: flex;
+      gap: 10px;
+      padding: 0 0 0 10px;
+    }
+  }
+
+  .disclaimer {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 1140px;
+    margin: auto;
+
+    padding: 40px 0 0 20px;
+    opacity: 0.6;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color: #d9d9d9;
+
+    gap: 20px;
+
+    .rights {
+    }
+
+    .legal_issues {
+      line-height: 22.4px;
+    }
+  }
+}

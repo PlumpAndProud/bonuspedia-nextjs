@@ -1,0 +1,40 @@
+.site_map {
+  max-width: 1140px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+
+  color: #d9d9d9;
+  padding: 20px 20px 0 0;
+  .map {
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px 0 0 0;
+    gap: 15px;
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      .title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 28.8px;
+      }
+      .description {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 14px;
+        opacity: 0.6;
+      }
+    }
+    .links {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19.6px;
+      li {
+        padding: 0 0 20px 0;
+      }
+    }
+  }
+}

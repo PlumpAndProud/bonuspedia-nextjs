@@ -2,7 +2,29 @@ import style from "./Footer.module.scss";
 import Image from "next/image";
 import LOGO from "../../../public/logo.png";
 
-const iconsData = {
+const footerData = {
+  nav: [
+    {
+      id: "navFirst",
+      slug: "/Rules",
+      name: "Regulamin serwisu",
+    },
+    {
+      id: "navSecond",
+      slug: "/Privacy",
+      name: "Polityka prywatności",
+    },
+    {
+      id: "navThird",
+      slug: "/About",
+      name: "O serwisie",
+    },
+    {
+      id: "navFourth",
+      slug: "/Contact",
+      name: "Kontakt",
+    },
+  ],
   icon: [
     {
       id: "iconFirst",
@@ -56,15 +78,18 @@ export default function Footer() {
         </div>
         <div className={style.nav}>
           <ul>
-            <li>Regulamin serwisu</li>
-            <li>Polityka prywatności</li>
-            <li>O serwisie</li>
-            <li>Kontakt</li>
+            {footerData.nav.map((nav, index) => {
+              return (
+                <li key={`${nav.id} + ${index}`}>
+                  <a href={nav.slug}>{nav.name}</a>
+                </li>
+              );
+            })}
             <li>Polecane buki:</li>
           </ul>
         </div>
         <div className={style.icons}>
-          {iconsData.icon.map((icon, index) => {
+          {footerData.icon.map((icon, index) => {
             return (
               <a href={icon.slug} key={`${icon.id} + ${index}`}>
                 <Image
